@@ -1,0 +1,65 @@
+#
+# ~/.bash_extra
+#
+# Personal configs be here (mostly)
+
+# Function definition syntax for the record:
+# func_name() {
+#  command1
+#  command2
+# }
+#
+
+webmail() {
+	echo 'Webmail Studenti su Firefox'
+	firefox https://www.siaf.unifi.it/vp-1383-webmail.html
+}
+
+sgro() {
+	echo 'Segreteria Online su Firefox'
+	firefox https://sol-portal.unifi.it/ls-3-studenti.html#Studenti_Iscritti
+}
+
+moodle() {
+# Course Abbreviations
+analisi_mat='https://e-l.unifi.it/course/view.php?id=10547' # am1
+algebra='https://e-l.unifi.it/course/view.php?id=10420' # alg
+analisi_num='https://e-l.unifi.it/course/view.php?id=12171' # cnm
+fond_info='https://e-l.unifi.it/course/view.php?id=11232' # fin
+prog='https://e-l.unifi.it/course/view.php?id=10575' # prg
+fisica1='https://e-l.unifi.it/course/view.php?id=11502' # ph1 or f1
+teoria_circ='https://e-l.unifi.it/course/view.php?id=13097' # tdc
+lab_prog='https://e-l.unifi.it/course/view.php?id=10564' # lpg or lprg
+
+if [ -z $1 ]; then
+	echo -e "\e[31m\e[1mcourse abbrv. not given\e[0m" >&2
+	else
+	case $1 in
+	'am1') firefox $analisi_mat;;
+	'alg') firefox $algebra;;
+	'cnm') firefox $analisi_num;;
+	'fin') firefox $fond_info;;
+	'prg') firefox $prog;;
+	'ph1') firefox $fisica1;;
+	'f1' ) firefox $fisica1;;
+	'tdc') firefox $teoria_circ;;
+	'lpg') firefox $lab_prog;;
+	'lprg') firefox $lab_prog;;
+	'help') # DONT MESS W/ THE FORMATTING
+echo -e "\tCourse				Abbrv.
+	Analisi Matematica		am1
+	Algebra Lineare & Geometria	alg
+	Fisica 1			ph1 or f1
+	Fondamenti di Informatica	fin
+	Calcolo Numerico		cnm
+	Programmazione			prg
+	Laboratorio di Programmazione	lpg or lprg
+	Teoria dei Circuiti		tdc	
+";;
+	*) echo	-e "\e[31m\e[1mbad abbrv.\e[0m" >&2
+esac
+fi
+
+
+}
+
