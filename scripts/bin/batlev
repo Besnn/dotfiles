@@ -1,0 +1,7 @@
+#!/bin/bash
+
+full=`cat /sys/class/power_supply/BAT0/charge_full`
+now=`cat /sys/class/power_supply/BAT0/charge_now`
+
+echo "Battery percentage: "$(awk "BEGIN { print (($now/$full)*100)}")'%' | lolcat
+exit 0

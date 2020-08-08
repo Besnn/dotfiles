@@ -141,9 +141,16 @@ ex ()
 #########
 # EXTRA #
 #########
+# 
+# So I can easily update the misc repo on my github
+misc1='/home/besnn/.bashrc /home/besnn/.bash_extra /home/besnn/.vimrc /home/besnn/scripts /etc/hosts'
+for misce in $misc1
+do
+/bin/cp -purf $misce  ~/_git/misc # -purf for preserve, update, recursive and force
+#/bin/cp because apparently cp is aliased as cp -i (as many other commands)
+done
 
-#todo add
-
+# prompts
 PS2='~>'
 
 function  _update_ps1() {
@@ -154,11 +161,18 @@ if [[ $TERM != linux && ! $PROMPT_COMMAND =~ _update_ps1 ]]; then
     PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
 fi
 
-alias stime="cd ~/_git"
+# aliases
+alias gtime="cd ~/_git"
 
+# sourcing .bash_extra
 exdir='.bash_extra'
 
 if [ -f "$exdir" ]; then
 		source "$exdir"
 fi
+
+# PATH exports
+export PATH=/usr/local/MATLAB/R2020a/bin/:$PATH
+export PATH=/home/besnn/.gem/ruby/2.7.0/bin/:$PATH
+export PATH=~/scripts/bin/:$PATH
 

@@ -63,3 +63,11 @@ fi
 
 }
 
+matlab0() {
+call="/usr/local/MATLAB/R2020a/bin/matlab"
+errorMsg=$( $call 2>1 )
+if ! $(echo $errorMsg | grep -q 'Gtk-WARNING'); then
+	echo $errorMsg
+fi
+}
+
