@@ -141,7 +141,7 @@ ex ()
 #########
 # EXTRA #
 #########
-# 
+ 
 # So I can easily update the misc repo on my github
 misc1='/home/besnn/.bashrc /home/besnn/.bash_extra /home/besnn/.vimrc /home/besnn/scripts /etc/hosts'
 for misce in $misc1
@@ -165,14 +165,16 @@ fi
 alias gtime="cd ~/_git"
 
 # sourcing .bash_extra
-exdir='.bash_extra'
+exdir='~/.bash_extra'
 
 if [ -f "$exdir" ]; then
 		source "$exdir"
 fi
 
+
 # PATH exports
 export PATH=/usr/local/MATLAB/R2020a/bin/:$PATH
 export PATH=/home/besnn/.gem/ruby/2.7.0/bin/:$PATH
 export PATH=~/scripts/bin/:$PATH
+export PATH=/home/besnn/_git/moco-cli/:$PATH
 

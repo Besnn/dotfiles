@@ -40,12 +40,10 @@ if [ -z $1 ]; then
 	'cnm') firefox $analisi_num;;
 	'fin') firefox $fond_info;;
 	'prg') firefox $prog;;
-	'ph1') firefox $fisica1;;
-	'f1' ) firefox $fisica1;;
+	'ph1'|'f1') firefox $fisica1;;
 	'tdc') firefox $teoria_circ;;
-	'lpg') firefox $lab_prog;;
-	'lprg') firefox $lab_prog;;
-	'help') # DONT MESS W/ THE FORMATTING
+	'lpg'|'lprg'|'lprog') firefox $lab_prog;;
+	'help'|'-h'|'--help') # DONT MESS W/ THE FORMATTING
 echo -e "\tCourse				Abbrv.
 	Analisi Matematica		am1
 	Algebra Lineare & Geometria	alg
