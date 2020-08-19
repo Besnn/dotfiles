@@ -141,7 +141,10 @@ ex ()
 #########
 # EXTRA #
 #########
- 
+# Generic Options
+xset r rate 200 35
+
+
 # So I can easily update the misc repo on my github
 misc1='/home/besnn/.bashrc /home/besnn/.bash_extra /home/besnn/.vimrc /home/besnn/scripts /etc/hosts'
 for misce in $misc1
@@ -153,28 +156,36 @@ done
 # prompts
 PS2='~>'
 
-function  _update_ps1() {
-    PS1=$(powerline-shell $?)
+function _update_ps1() {
+    PS1="$(powerline $?)"
 }
 
-if [[ $TERM != linux && ! $PROMPT_COMMAND =~ _update_ps1 ]]; then
+if [ "$TERM" != "linux" ]; then
     PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
 fi
 
+# defaults
+export EDITOR=vim
+
 # aliases
 alias gtime="cd ~/_git"
+alias ogtime="cd ~/_ogit"
+alias ll="ls -lah"
+alias mv="mv -i"
+alias ..="cd .."
+alias ...="cd ../.."
+alias syu="sudo pacman -Syyu"
+alias cp="cp -i"
 
 # sourcing .bash_extra
-exdir='~/.bash_extra'
+exdir='/home/besnn/.bash_extra'
 
-if [ -f "$exdir" ]; then
-		source "$exdir"
-fi
-
+[[ -f "$exdir" ]] && . "$exdir"
 
 # PATH exports
 export PATH=/usr/local/MATLAB/R2020a/bin/:$PATH
 export PATH=/home/besnn/.gem/ruby/2.7.0/bin/:$PATH
 export PATH=~/scripts/bin/:$PATH
 export PATH=/home/besnn/_git/moco-cli/:$PATH
+export PATH=/home/besnn/.cargo/bin/:$PATH
 

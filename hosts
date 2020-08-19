@@ -49361,6 +49361,12 @@
 0.0.0.0 invite.myspace.com
 0.0.0.0 linux.myspace.com
 0.0.0.0 log.myspace.com
+0.0.0.0 newgrounds.com
+0.0.0.0 f95zone.to
+0.0.0.0 fapforfun.net
+0.0.0.0 sankakucomplex.com
+0.0.0.0 idol.sankakucomplex.com
+0.0.0.0 devilgame.org
 0.0.0.0 login.myspace.com
 0.0.0.0 mail.myspace.com
 0.0.0.0 message.myspace.com
@@ -49412,8 +49418,3 @@
 0.0.0.0 36.media.tumblr.com
 0.0.0.0 38.media.tumblr.com
 
-# Extra
-
-0.0.0.0 newgrounds.com
-0.0.0.0 f95zone.to
-0.0.0.0 fapforfun.net
