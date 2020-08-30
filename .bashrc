@@ -90,12 +90,6 @@ fi
 
 unset use_color safe_term match_lhs sh
 
-alias cp="cp -i"                          # confirm before overwriting something
-alias df='df -h'                          # human-readable sizes
-alias free='free -m'                      # show sizes in MB
-alias np='nano -w PKGBUILD'
-alias more=less
-
 xhost +local:root > /dev/null 2>&1
 
 complete -cf sudo
@@ -144,7 +138,6 @@ ex ()
 # Generic Options
 xset r rate 200 35
 
-
 # So I can easily update the misc repo on my github
 misc1='/home/besnn/.bashrc /home/besnn/.bash_extra /home/besnn/.vimrc /home/besnn/scripts /etc/hosts'
 for misce in $misc1
@@ -167,25 +160,25 @@ fi
 # defaults
 export EDITOR=vim
 
+set -o noclobber # safe i/o redirection; use >| to overwrite
+
 # aliases
 alias gtime="cd ~/_git"
 alias ogtime="cd ~/_ogit"
-alias ll="ls -lah"
 alias mv="mv -i"
 alias ..="cd .."
 alias ...="cd ../.."
 alias syu="sudo pacman -Syyu"
-alias cp="cp -i"
+alias cp="cp -i"                          # confirm before overwriting something
+alias df="df -h"                          # human-readable sizes
+alias free="free -m"                      # show sizes in MB
+alias np="nano -w PKGBUILD"
+alias more="less"
+alias ll="ls -lah"
+alias la="ls -A"
 
 # sourcing .bash_extra
 exdir='/home/besnn/.bash_extra'
 
 [[ -f "$exdir" ]] && . "$exdir"
-
-# PATH exports
-export PATH=/usr/local/MATLAB/R2020a/bin/:$PATH
-export PATH=/home/besnn/.gem/ruby/2.7.0/bin/:$PATH
-export PATH=~/scripts/bin/:$PATH
-export PATH=/home/besnn/_git/moco-cli/:$PATH
-export PATH=/home/besnn/.cargo/bin/:$PATH
 
