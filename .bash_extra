@@ -30,7 +30,11 @@ prog='https://e-l.unifi.it/course/view.php?id=10575' # prg
 fisica1='https://e-l.unifi.it/course/view.php?id=11502' # ph1 or f1
 teoria_circ='https://e-l.unifi.it/course/view.php?id=13097' # tdc
 lab_prog='https://e-l.unifi.it/course/view.php?id=10564' # lpg or lprg
-
+fond_ric_op='https://e-l.unifi.it/course/view.php?id=14647' # fro
+analisi_prob='https://e-l.unifi.it/course/view.php?id=14587' # am2 or prob
+calcolatori='https://e-l.unifi.it/course/view.php?id=18420' # calc
+fond_sign_trans='https://e-l.unifi.it/course/view.php?id=15015' # fst
+prog_concorr='https://e-l.unifi.it/course/view.php?id=17752' # prgc
 if [ -z $1 ]; then
 	echo -e "\e[31m\e[1mcourse abbrv. not given\e[0m" >&2
 	else
@@ -43,16 +47,26 @@ if [ -z $1 ]; then
 	'ph1'|'f1') firefox $fisica1;;
 	'tdc') firefox $teoria_circ;;
 	'lpg'|'lprg'|'lprog') firefox $lab_prog;;
+	'fro') firefox $fond_ric_op;;
+	'am2'|'prob') firefox $analisi_prob;; 
+	'calc') firefox $calcolatori;;
+	'fst') firefox $fond_sign_trans;;
+	'prgc') firefox $prog_concorr;;
 	'help'|'-h'|'--help') # DONT MESS W/ THE FORMATTING
-echo -e "\tCourse				Abbrv.
-	Analisi Matematica		am1
-	Algebra Lineare & Geometria	alg
-	Fisica 1			ph1 or f1
-	Fondamenti di Informatica	fin
-	Calcolo Numerico		cnm
-	Programmazione			prg
-	Laboratorio di Programmazione	lpg or lprg
-	Teoria dei Circuiti		tdc	
+echo -e "\tCourse					Abbrv.
+	Analisi Matematica			am1
+	Algebra Lineare & Geometria		alg
+	Fisica 1				ph1 or f1
+	Fondamenti di Informatica		fin
+	Calcolo Numerico			cnm
+	Programmazione				prg
+	Laboratorio di Programmazione		lpg or lprg
+	Teoria dei Circuiti			tdc	
+	Fondamenti di Segnale e Trasmissione	fst
+	Calcolatori				calc
+	Analisi Matematica 2 & Probabilità	am2 or prob
+	Fondamenti di Ricerca Operativa		fro
+	Programmazione Concorrente		prgc
 ";;
 	*) echo	-e "\e[31m\e[1mbad abbrv.\e[0m" >&2
 esac
@@ -61,11 +75,77 @@ fi
 
 }
 
-flashcards() {
-	firefox https://quizlet.com/_8lajbc?x=1qqt&i=2zpx6t
-}
-
 mse() {
 	firefox https://math.stackexchange.com/
+}
+
+orario() {
+	xdg-open ~/academia/orario.png 
+}
+
+libri() {
+
+if [ -z $1 ]; then
+	echo -e "\e[31m\e[1mbook abbrv. not given\e[0m" >&2
+	else
+	case $1 in
+	'off') zathura-start ~/academia/offerta.pdf &;;
+	'fst') zathura-start ~/academia/fst.pdf &;;
+	'fst-ind') zathura-start ~/academia/fst-ind.pdf &;;
+	'fsto') firefox http://www.dspguide.com/pdfbook.htm &;;
+	'fstd') zathura-start ~/academia/fstd.pdf &;;
+	'calc') zathura-start ~/academia/calc.pdf &;;
+	'calc-reg') zathura-start ~/academia/calc-reg.pdf &;;
+	'rip') zathura-start ~/academia/rip/index.html &;;
+	'am2') zathura-start ~/academia/am2.pdf &;;
+	'prob') zathura-start ~/academia/prob.pdf &;;
+	'java') zathura-start ~/academia/java.pdf &;;
+	# ======= #
+	'algaut') zathura-start ~/academia/"algaut.pdf" &;;
+	'arccomp') zathura-start ~/academia/"arccomp.pdf" &;;
+	*) echo -e "\e[31m\e[1mbook abbrv. not given\e[0m" >&2;;
+esac
+fi
+}
+	
+matlab() {
+	pkexec	/usr/local/MATLAB/R2020b/bin/matlab &
+	fg
+}
+
+matlab-gui() {
+	/usr/local/MATLAB/R2020b/bin/matlab &
+}
+
+
+
+site() {
+if [ -z $1 ]; then
+	echo -e "\e[31m\e[1msite abbrv. not given\e[0m" >&2
+	else
+	case $1 in
+	'calc') firefox http://wenders.dinfo.unifi.it/colombo_now/calc.html;;
+	'unicrema') firefox http://www.swappa.it/wiki/Category/UniCrema;;
+	*) echo -e "\e[31m\e[1msite abbrv. not given\e[0m" >&2;;
+esac
+fi
+}
+
+ycb() {
+	xdg-open https://news.ycombinator.com/news
+}
+
+idea() {
+	~/IDEA/bin/idea.sh &
+}
+
+bcl() {
+	cd ~/useful_jnk/assembly-bcl/
+	mvn exec:exec &
+	cd -
+}
+
+asm86() {
+	xdg-open ~/useful_jnk/davis/dist/index.html
 }
 

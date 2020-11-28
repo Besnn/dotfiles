@@ -136,9 +136,11 @@ ex ()
 # EXTRA #
 #########
 # Generic Options
-xset r rate 200 35
+xset r rate 195 42
+set -o noclobber # safe i/o redirection; use >| to overwrite
 
 # So I can easily update the misc repo on my github
+#
 misc1='/home/besnn/.bashrc /home/besnn/.bash_extra /home/besnn/.vimrc /home/besnn/scripts /etc/hosts'
 for misce in $misc1
 do
@@ -150,7 +152,7 @@ done
 PS2='~>'
 
 function _update_ps1() {
-    PS1="$(powerline $?)"
+    PS1="$(powerline-shell $?)"
 }
 
 if [ "$TERM" != "linux" ]; then
@@ -159,9 +161,12 @@ fi
 
 # defaults
 export EDITOR=vim
-
-set -o noclobber # safe i/o redirection; use >| to overwrite
-
+# exports
+export PATH=/home/besnn/_git/moco-cli/:$PATH
+export PATH=/home/besnn/scripts/bin:$PATH
+export MANPATH=/usr/local/texlive/2020/texmf-dist/doc/man:$MANPATH
+export INFOPATH=/usr/local/texlive/2020/texmf-dist/doc/info:$INFOPATH
+export PATH=/usr/lib/jvm/java-1.11.0-openjdk-amd64:$PATH
 # aliases
 alias gtime="cd ~/_git"
 alias ogtime="cd ~/_ogit"
@@ -173,12 +178,27 @@ alias cp="cp -i"                          # confirm before overwriting something
 alias df="df -h"                          # human-readable sizes
 alias free="free -m"                      # show sizes in MB
 alias np="nano -w PKGBUILD"
+alias ld="ls -Fl | grep \/$"
 alias more="less"
 alias ll="ls -lah"
 alias la="ls -A"
+alias lisp="clisp"
+alias uptime="uptime -p"
+alias bc="bc -l"
+alias v="vim"
 
 # sourcing .bash_extra
 exdir='/home/besnn/.bash_extra'
 
 [[ -f "$exdir" ]] && . "$exdir"
+
+# school stuff be here
+scdir='/home/besnn/.bash_schoolf'
+
+# [[ -f "$scdir" ]] && . "$scdir"
+
+# QOL shortcuts 
+reload() {
+	source $HOME/.bashrc
+}
 
