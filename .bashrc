@@ -167,6 +167,7 @@ export PATH=/home/besnn/scripts/bin:$PATH
 export MANPATH=/usr/local/texlive/2020/texmf-dist/doc/man:$MANPATH
 export INFOPATH=/usr/local/texlive/2020/texmf-dist/doc/info:$INFOPATH
 export PATH=/usr/lib/jvm/java-1.11.0-openjdk-amd64:$PATH
+export VIMRC=~/.vimrc
 # aliases
 alias gtime="cd ~/_git"
 alias ogtime="cd ~/_ogit"

@@ -22,7 +22,7 @@ sgro() {
 
 moodle() {
 # Course Abbreviations
-analisi_mat='https://e-l.unifi.it/course/view.php?id=10547' # am1
+analisi_mat='https://e-l.unifi.it/course/view.php?id=13330' # am1
 algebra='https://e-l.unifi.it/course/view.php?id=10420' # alg
 analisi_num='https://e-l.unifi.it/course/view.php?id=12171' # cnm
 fond_info='https://e-l.unifi.it/course/view.php?id=11232' # fin
@@ -126,6 +126,8 @@ if [ -z $1 ]; then
 	case $1 in
 	'calc') firefox http://wenders.dinfo.unifi.it/colombo_now/calc.html;;
 	'unicrema') firefox http://www.swappa.it/wiki/Category/UniCrema;;
+	'cleancode' | 'cleancoder') firefox https://blog.cleancoder.com/;;
+	'goodreads') firefox https://www.goodreads.com;;
 	*) echo -e "\e[31m\e[1msite abbrv. not given\e[0m" >&2;;
 esac
 fi
@@ -147,5 +149,9 @@ bcl() {
 
 asm86() {
 	xdg-open ~/useful_jnk/davis/dist/index.html
+}
+
+regex101() {
+	xdg-open https:/regex101.com
 }
 
