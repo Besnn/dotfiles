@@ -1,0 +1,7 @@
+sites="https://www.wikiwand.com/en/Alpha_compositing
+	   https://www.wikiwand.com/en/Netpbm
+       http://netpbm.sourceforge.net/doc/pam.html
+	   https://e-l.unifi.it/mod/page/view.php?id=260836
+	   https://google.github.io/styleguide/cppguide.html
+       "
+firefox $sites
