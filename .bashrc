@@ -144,8 +144,9 @@ set -o noclobber # safe i/o redirection; use >| to overwrite
 misc1='/home/besnn/.bashrc /home/besnn/.bash_extra /home/besnn/.vimrc /home/besnn/scripts /etc/hosts'
 for misce in $misc1
 do
-/bin/cp -purf $misce  ~/_git/misc # -purf for preserve, update, recursive and force
+/bin/cp -Lpurf $misce  ~/_git/misc # -purf for preserve, update, recursive and force
 #/bin/cp because apparently cp is aliased as cp -i (as many other commands)
+# -L is for following symlinks
 done
 
 # prompts
@@ -164,6 +165,7 @@ export EDITOR=vim
 # exports
 export PATH=/home/besnn/_git/moco-cli/:$PATH
 export PATH=/home/besnn/scripts/bin:$PATH
+export PATH=/home/besnn/Telegram:$PATH
 export MANPATH=/usr/local/texlive/2020/texmf-dist/doc/man:$MANPATH
 export INFOPATH=/usr/local/texlive/2020/texmf-dist/doc/info:$INFOPATH
 export PATH=/usr/lib/jvm/java-1.11.0-openjdk-amd64:$PATH
@@ -187,6 +189,9 @@ alias lisp="clisp"
 alias uptime="uptime -p"
 alias bc="bc -l"
 alias v="vim"
+alias open="xdg-open"
+alias sy="synonym"
+alias tg="Telegram & >&2"
 
 # sourcing .bash_extra
 exdir='/home/besnn/.bash_extra'
