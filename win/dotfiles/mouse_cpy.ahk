@@ -1,1 +1,0 @@
-mouse_cpy.ahk
