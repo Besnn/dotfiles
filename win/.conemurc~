@@ -1,0 +1,3 @@
+%windir%\system32\wsl.exe -cur_console:pm:/mnt
+cmd.exe
+
