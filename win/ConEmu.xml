@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <key name="Software">
 	<key name="ConEmu">
-		<key name=".Vanilla" modified="2021-03-25 16:01:18" build="210314">
+		<key name=".Vanilla" modified="2021-03-30 17:26:40" build="210314">
 			<value name="StartType" type="hex" data="01"/>
-			<value name="CmdLine" type="string" data='%windir%\system32\wsl.exe -cur_console:pm:/mnt --distribution Ubuntu-20.04 &amp; cmd.exe /k "%ConEmuBaseDir%\CmdInit.cmd"'/>
+			<value name="CmdLine" type="string" data='%windir%\system32\wsl.exe -cur_console:pm:/mnt --distribution Ubuntu-20.04 &amp; cmd.exe /k "%ConEmuBaseDir%\CmdInit.cmd" C:\Users\TDTTD\scripts\powerline.bat\init.bat'/>
 			<value name="StartTasksFile" type="string" data="@C:\Users\TDTTD\dotfiles\.conemurc"/>
 			<value name="StartTasksName" type="string" data="{WSL::Ubuntu-20.04}"/>
 			<value name="StartFarFolders" type="hex" data="00"/>
@@ -41,7 +41,7 @@
 			<value name="FontSize" type="ulong" data="10"/>
 			<value name="StatusFontHeight" type="long" data="12"/>
 			<value name="TabFontHeight" type="long" data="13"/>
-			<key name="HotKeys" modified="2021-03-25 11:25:24" build="210314">
+			<key name="HotKeys" modified="2021-03-26 19:22:05" build="210314">
 				<value name="MinimizeRestore" type="dword" data="80808071"/>
 				<value name="KeyMacroVersion" type="hex" data="02"/>
 				<value name="Multi.Modifier" type="dword" data="000000a2"/>
@@ -80,8 +80,8 @@
 				<value name="Multi.SplitSwapD" type="dword" data="00125d28"/>
 				<value name="Multi.SplitSwapL" type="dword" data="00125d25"/>
 				<value name="Multi.SplitSwapR" type="dword" data="00125d27"/>
-				<value name="Multi.Next" type="dword" data="0000124b"/>
-				<value name="Multi.NextShift" type="dword" data="0000124a"/>
+				<value name="Multi.Next" type="dword" data="0000124a"/>
+				<value name="Multi.NextShift" type="dword" data="0000124b"/>
 				<value name="Multi.Recreate" type="dword" data="00005bc0"/>
 				<value name="Multi.AltCon" type="dword" data="00005b41"/>
 				<value name="Multi.Pause" type="dword" data="80808013"/>
@@ -331,7 +331,7 @@
 			<value name="bgImageColors" type="dword" data="ffffffff"/>
 			<value name="bgOperation" type="hex" data="01"/>
 			<value name="bgPluginAllowed" type="hex" data="00"/>
-			<value name="AlphaValue" type="hex" data="FF"/>
+			<value name="AlphaValue" type="hex" data="D9"/>
 			<value name="AlphaValueSeparate" type="hex" data="00"/>
 			<value name="AlphaValueInactive" type="hex" data="FF"/>
 			<value name="UserScreenTransparent" type="hex" data="00"/>
@@ -343,21 +343,21 @@
 			<value name="IntegralSize" type="hex" data="00"/>
 			<value name="WindowMode" type="dword" data="0000051f"/>
 			<value name="ConWnd X" type="long" data="0"/>
-			<value name="ConWnd Y" type="long" data="105"/>
+			<value name="ConWnd Y" type="long" data="133"/>
 			<value name="LastMonitor" type="string" data="0,0,1366,738"/>
 			<value name="ConWnd Width" type="dword" data="000000fa"/>
 			<value name="ConWnd Height" type="dword" data="00000019"/>
 			<value name="16bit Height" type="ulong" data="0"/>
 			<value name="Restore2ActiveMon" type="hex" data="00"/>
 			<value name="RestoreInactive" type="hex" data="00"/>
-			<value name="QuakeAnimation" type="ulong" data="10"/>
+			<value name="QuakeAnimation" type="ulong" data="0"/>
 			<value name="HideCaption" type="hex" data="00"/>
 			<value name="HideChildCaption" type="hex" data="01"/>
 			<value name="FocusInChildWindows" type="hex" data="01"/>
 			<value name="HideCaptionAlways" type="hex" data="00"/>
 			<value name="HideCaptionAlwaysFrame" type="hex" data="FF"/>
-			<value name="HideCaptionAlwaysDelay" type="ulong" data="20"/>
-			<value name="HideCaptionAlwaysDisappear" type="ulong" data="20"/>
+			<value name="HideCaptionAlwaysDelay" type="ulong" data="0"/>
+			<value name="HideCaptionAlwaysDisappear" type="ulong" data="0"/>
 			<value name="DownShowHiddenMessage" type="hex" data="00"/>
 			<value name="DownShowExOnTopMessage" type="hex" data="00"/>
 			<value name="ConsoleFontName" type="string" data="Lucida Console"/>
@@ -604,17 +604,17 @@
 			<value name="Update.PostUpdateCmd" type="string" data="echo Last successful update&gt;ConEmuUpdate.info &amp;&amp; date /t&gt;&gt;ConEmuUpdate.info &amp;&amp; time /t&gt;&gt;ConEmuUpdate.info"/>
 			<key name="Tasks" modified="2021-03-25 15:30:22" build="210314">
 				<value name="Count" type="long" data="13"/>
-				<key name="Task1" modified="2021-03-24 13:51:02" build="210314">
-					<value name="Name" type="string" data="{Shells::cmd}"/>
+				<key name="Task1" modified="2021-03-30 18:05:52" build="210314">
+					<value name="Name" type="string" data="{cmd::cmd}"/>
 					<value name="Flags" type="dword" data="00000002"/>
 					<value name="Hotkey" type="dword" data="00001243"/>
 					<value name="GuiArgs" type="string" data=""/>
 					<value name="Active" type="long" data="0"/>
 					<value name="Count" type="long" data="1"/>
-					<value name="Cmd1" type="string" data='cmd.exe /k "%ConEmuBaseDir%\CmdInit.cmd"'/>
+					<value name="Cmd1" type="string" data='cmd.exe /k "%ConEmuBaseDir%\CmdInit.cmd" C:\Users\TDTTD\scripts\powerline.bat\init.bat'/>
 				</key>
-				<key name="Task2" modified="2021-03-24 13:50:24" build="210314">
-					<value name="Name" type="string" data="{WSL::Ubuntu-20.04}"/>
+				<key name="Task2" modified="2021-03-28 18:19:59" build="210314">
+					<value name="Name" type="string" data="{bash::Ubuntu-20.04}"/>
 					<value name="Flags" type="dword" data="00000004"/>
 					<value name="Hotkey" type="dword" data="0000125a"/>
 					<value name="GuiArgs" type="string" data=""/>
@@ -622,8 +622,8 @@
 					<value name="Count" type="long" data="1"/>
 					<value name="Cmd1" type="string" data="%windir%\system32\wsl.exe -cur_console:pm:/mnt --distribution Ubuntu-20.04"/>
 				</key>
-				<key name="Task3" modified="2021-03-24 13:49:14" build="210314">
-					<value name="Name" type="string" data="{Shells::cmd (Admin)}"/>
+				<key name="Task3" modified="2021-03-28 18:18:09" build="210314">
+					<value name="Name" type="string" data="{cmd::cmd (Admin)}"/>
 					<value name="Flags" type="dword" data="00000004"/>
 					<value name="Hotkey" type="dword" data="00000000"/>
 					<value name="GuiArgs" type="string" data=""/>
@@ -631,8 +631,8 @@
 					<value name="Count" type="long" data="1"/>
 					<value name="Cmd1" type="string" data='cmd.exe /k "%ConEmuBaseDir%\CmdInit.cmd" -new_console:a'/>
 				</key>
-				<key name="Task4" modified="2021-03-24 13:49:14" build="210314">
-					<value name="Name" type="string" data="{Shells::cmd-32}"/>
+				<key name="Task4" modified="2021-03-28 18:18:09" build="210314">
+					<value name="Name" type="string" data="{cmd::cmd-32}"/>
 					<value name="Flags" type="dword" data="00000004"/>
 					<value name="Hotkey" type="dword" data="00000000"/>
 					<value name="GuiArgs" type="string" data=""/>
@@ -640,8 +640,8 @@
 					<value name="Count" type="long" data="1"/>
 					<value name="Cmd1" type="string" data='"%windir%\syswow64\cmd.exe" /k "%ConEmuBaseDir%\CmdInit.cmd"'/>
 				</key>
-				<key name="Task5" modified="2021-03-24 13:49:14" build="210314">
-					<value name="Name" type="string" data="{Shells::cmd 64/32}"/>
+				<key name="Task5" modified="2021-03-28 18:18:09" build="210314">
+					<value name="Name" type="string" data="{cmd::cmd 64/32}"/>
 					<value name="Flags" type="dword" data="00000004"/>
 					<value name="Hotkey" type="dword" data="00000000"/>
 					<value name="GuiArgs" type="string" data=""/>
@@ -650,8 +650,8 @@
 					<value name="Cmd1" type="string" data='&gt; "%windir%\system32\cmd.exe" /k ""%ConEmuBaseDir%\CmdInit.cmd" &amp; echo This is Native cmd.exe"'/>
 					<value name="Cmd2" type="string" data='"%windir%\syswow64\cmd.exe" /k ""%ConEmuBaseDir%\CmdInit.cmd" &amp; echo This is 32 bit cmd.exe -new_console:s50V"'/>
 				</key>
-				<key name="Task6" modified="2021-03-24 13:49:14" build="210314">
-					<value name="Name" type="string" data="{Shells::PowerShell}"/>
+				<key name="Task6" modified="2021-03-28 18:18:09" build="210314">
+					<value name="Name" type="string" data="{pwsh::PowerShell}"/>
 					<value name="Flags" type="dword" data="00000004"/>
 					<value name="Hotkey" type="dword" data="00000000"/>
 					<value name="GuiArgs" type="string" data=""/>
@@ -659,8 +659,8 @@
 					<value name="Count" type="long" data="1"/>
 					<value name="Cmd1" type="string" data="powershell.exe"/>
 				</key>
-				<key name="Task7" modified="2021-03-24 13:51:02" build="210314">
-					<value name="Name" type="string" data="{Shells::PowerShell (Admin)}"/>
+				<key name="Task7" modified="2021-03-28 18:18:09" build="210314">
+					<value name="Name" type="string" data="{pwsh::PowerShell (Admin)}"/>
 					<value name="Flags" type="dword" data="00000004"/>
 					<value name="Hotkey" type="dword" data="00001258"/>
 					<value name="GuiArgs" type="string" data=""/>
@@ -668,8 +668,17 @@
 					<value name="Count" type="long" data="1"/>
 					<value name="Cmd1" type="string" data="powershell.exe -new_console:a"/>
 				</key>
-				<key name="Task8" modified="2021-03-24 13:49:14" build="210314">
-					<value name="Name" type="string" data="{Bash::bash}"/>
+				<key name="Task8" modified="2021-03-28 18:20:47" build="210314">
+					<value name="Name" type="string" data="{fish::Msys2-64}"/>
+					<value name="Flags" type="dword" data="00000004"/>
+					<value name="Hotkey" type="dword" data="00000000"/>
+					<value name="GuiArgs" type="string" data=""/>
+					<value name="Active" type="long" data="0"/>
+					<value name="Count" type="long" data="1"/>
+					<value name="Cmd1" type="string" data='set CHERE_INVOKING=1 &amp; set "PATH=C:\msys64\usr\bin;%PATH%" &amp; %ConEmuBaseDirShort%\conemu-msys2-64.exe -new_console:p C:\msys64\usr\bin\fish.exe --login -i -new_console:C:"C:\msys64\msys2.ico"'/>
+				</key>
+				<key name="Task9" modified="2021-03-28 18:20:47" build="210314">
+					<value name="Name" type="string" data="{bash::bash}"/>
 					<value name="Flags" type="dword" data="00000004"/>
 					<value name="Hotkey" type="dword" data="00000000"/>
 					<value name="GuiArgs" type="string" data=""/>
@@ -677,8 +686,8 @@
 					<value name="Count" type="long" data="1"/>
 					<value name="Cmd1" type="string" data="%windir%\system32\wsl.exe -cur_console:pm:/mnt"/>
 				</key>
-				<key name="Task9" modified="2021-03-20 11:47:35" build="210314">
-					<value name="Name" type="string" data="{WSL::WSL}"/>
+				<key name="Task10" modified="2021-03-28 18:20:47" build="210314">
+					<value name="Name" type="string" data="{bash::WSL}"/>
 					<value name="Flags" type="dword" data="00000004"/>
 					<value name="Hotkey" type="dword" data="00000000"/>
 					<value name="GuiArgs" type="string" data=""/>
@@ -686,8 +695,8 @@
 					<value name="Count" type="long" data="1"/>
 					<value name="Cmd1" type="string" data="%windir%\system32\wsl.exe -cur_console:pm:/mnt"/>
 				</key>
-				<key name="Task10" modified="2021-03-20 11:47:35" build="210314">
-					<value name="Name" type="string" data="{Helper::Show ANSI colors}"/>
+				<key name="Task11" modified="2021-03-28 18:20:47" build="210314">
+					<value name="Name" type="string" data="{helper::Show ANSI colors}"/>
 					<value name="Flags" type="dword" data="00000004"/>
 					<value name="Hotkey" type="dword" data="00000000"/>
 					<value name="GuiArgs" type="string" data=""/>
@@ -695,8 +704,8 @@
 					<value name="Count" type="long" data="1"/>
 					<value name="Cmd1" type="string" data='cmd.exe /k type "%ConEmuBaseDir%\Addons\AnsiColors16t.ans" -cur_console:n'/>
 				</key>
-				<key name="Task11" modified="2021-03-20 11:47:35" build="210314">
-					<value name="Name" type="string" data="{Tools::Chocolatey (Admin)}"/>
+				<key name="Task12" modified="2021-03-28 18:20:47" build="210314">
+					<value name="Name" type="string" data="{tools::Chocolatey (Admin)}"/>
 					<value name="Flags" type="dword" data="00000004"/>
 					<value name="Hotkey" type="dword" data="00000000"/>
 					<value name="GuiArgs" type="string" data=""/>
@@ -704,17 +713,8 @@
 					<value name="Count" type="long" data="1"/>
 					<value name="Cmd1" type="string" data='*cmd.exe /k Title Chocolatey &amp; "%ConEmuBaseDir%\Addons\ChocolateyAbout.cmd"'/>
 				</key>
-				<key name="Task12" modified="2021-03-25 15:23:27" build="210314">
-					<value name="Name" type="string" data="{Bash::Msys2-64}"/>
-					<value name="Flags" type="dword" data="00000004"/>
-					<value name="Hotkey" type="dword" data="00000000"/>
-					<value name="GuiArgs" type="string" data=""/>
-					<value name="Active" type="long" data="0"/>
-					<value name="Count" type="long" data="1"/>
-					<value name="Cmd1" type="string" data='set CHERE_INVOKING=1 &amp; set "PATH=C:\msys64\usr\bin;%PATH%" &amp; %ConEmuBaseDirShort%\conemu-msys2-64.exe -new_console:p C:\msys64\usr\bin\bash.exe --login -i -new_console:C:"C:\msys64\msys2.ico"'/>
-				</key>
-				<key name="Task13" modified="2021-03-25 15:30:22" build="210314">
-					<value name="Name" type="string" data="{Shells::Yori}"/>
+				<key name="Task13" modified="2021-03-28 18:18:09" build="210314">
+					<value name="Name" type="string" data="{cmd::Yori}"/>
 					<value name="Flags" type="dword" data="00000004"/>
 					<value name="Hotkey" type="dword" data="00000000"/>
 					<value name="GuiArgs" type="string" data=""/>
@@ -771,9 +771,8 @@
 				</key>
 			</key>
 			<value name="CmdLineHistory" type="multi">
-				<line data="{Bash::Msys2-64}"/>
-				<line data="{Shells::Yori}"/>
-				<line data="{Bash::bash}"/>
+				<line data="{bash::bash}"/>
+				<line data="{bash::Msys2-64}"/>
 			</value>
 		</key>
 	</key>

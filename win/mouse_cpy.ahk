@@ -21,6 +21,6 @@ CoordMode Mouse, Screen
    }
 return
 
-~Mbutton::
+~MButton::
 Send, ^v						  ;Paste via middle mouse click
 return

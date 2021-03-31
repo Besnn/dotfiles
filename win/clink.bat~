@@ -31,8 +31,8 @@
 ::doskey clear=cls
 ::doskey cd=chdir $*
 doskey refresh=C:\Users\TDTTD\scripts\powerline.bat\init.bat
-doskey ..=C:\Users\TDTTD\scripts\powerline.bat\_cd.bat ..
-doskey ...=C:\Users\TDTTD\scripts\powerline.bat\_cd.bat ..\..
+doskey ..=C:\Users\TDTTD\scripts\powerline.bat\cd ..
+doskey ...=C:\Users\TDTTD\scripts\powerline.bat\cd ..\..
 
 :: Mimic cmd.exe's behaviour when starting from the start menu.
 if /i "%1"=="startmenu" (
