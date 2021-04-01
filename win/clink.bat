@@ -21,9 +21,9 @@
 :: SETUP IS:
 :: * Clink
 :: * Git + Auxiliary Unix Binaries
+:: * vim
 :: * UnxUtils
 :: * powerline.bat
-
 
 
 @echo off
