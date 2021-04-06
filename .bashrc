@@ -144,11 +144,7 @@ set -o noclobber # safe i/o redirection; use >| to overwrite
 misc1='/home/besnn/.bashrc /home/besnn/.bash_extra /home/besnn/.vimrc /home/besnn/scripts /etc/hosts'
 for misce in $misc1
 do
-<<<<<<< HEAD
-/bin/cp -Lpurf $misce  "${WINDIR}"/_git/misc-dotfiles/win/wsl/ # -purf for preserve, update, recursive and force
-=======
 /bin/cp -Lpurf $misce  ~/_git/misc # -purf for preserve, update, recursive and force
->>>>>>> d8fab28b9e67674d76f88c7ddd71301b2c68f6fc
 #/bin/cp because apparently cp is aliased as cp -i (as many other commands)
 # -L is for following symlinks
 done
