@@ -147,7 +147,7 @@ WIN_DOTFILES=/mnt/c/Users/TDTTD/dotfiles
 misc2="${WIN_DOTFILES}/.conemurc ${WIN_DOTFILES}/clink.bat ${WIN_DOTFILES}/scripts ${WIN_DOTFILES}/Microsoft.PowerShell_profile.ps1"
 for misce in $misc1
 do
-/bin/cp -Lpurf $misce  "${WINDIR}"/_git/misc-dotfiles/wsl/ # -purf for preserve, update, recursive and force
+/bin/cp -Lpurf $misce  "${WINDIR}"/_git/misc-dotfiles/win/wsl/ # -purf for preserve, update, recursive and force
 #/bin/cp because apparently cp is aliased as cp -i (as many other commands)
 # -L is for following symlinks
 done
