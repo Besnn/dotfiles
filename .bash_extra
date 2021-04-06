@@ -28,13 +28,18 @@ analisi_num='https://e-l.unifi.it/course/view.php?id=12171' # cnm
 fond_info='https://e-l.unifi.it/course/view.php?id=11232' # fin
 prog='https://e-l.unifi.it/course/view.php?id=10575' # prg
 fisica1='https://e-l.unifi.it/course/view.php?id=11502' # ph1 or f1
-teoria_circ='https://e-l.unifi.it/course/view.php?id=13097' # tdc
-lab_prog='https://e-l.unifi.it/course/view.php?id=10564' # lpg or lprg
+teoria_circ='https://e-l.unifi.it/course/view.php?id=20398' # tdc
+lab_prog='https://e-l.unifi.it/course/view.php?id=14899' # lpg or lprg
 fond_ric_op='https://e-l.unifi.it/course/view.php?id=14647' # fro
 analisi_prob='https://e-l.unifi.it/course/view.php?id=14587' # am2 or prob
 calcolatori='https://e-l.unifi.it/course/view.php?id=18420' # calc
 fond_sign_trans='https://e-l.unifi.it/course/view.php?id=15015' # fst
 prog_concorr='https://e-l.unifi.it/course/view.php?id=17752' # prgc
+fond_ret='https://e-l.unifi.it/course/view.php?id=19844' # frt
+fond_aut='https://e-l.unifi.it/course/view.php?id=20446' # faut
+sys_op='https://e-l.unifi.it/course/view.php?id=20899' # so
+algoritmi='https://e-l.unifi.it/course/view.php?id=20730' # alg
+
 if [ -z $1 ]; then
 	echo -e "\e[31m\e[1mcourse abbrv. not given\e[0m" >&2
 	else
@@ -52,6 +57,10 @@ if [ -z $1 ]; then
 	'calc') firefox $calcolatori;;
 	'fst') firefox $fond_sign_trans;;
 	'prgc') firefox $prog_concorr;;
+	'frt') firefox $fond_ret;;
+	'faut') firefox $fond_aut;;
+	'so') firefox $sys_op;;
+	'ast'|'asd') firefox $algoritmi;;
 	'help'|'-h'|'--help') # DONT MESS W/ THE FORMATTING
 echo -e "\tCourse					Abbrv.
 	Analisi Matematica			am1
@@ -67,20 +76,57 @@ echo -e "\tCourse					Abbrv.
 	Analisi Matematica 2 & Probabilità	am2 or prob
 	Fondamenti di Ricerca Operativa		fro
 	Programmazione Concorrente		prgc
+	Fondamenti di Reti di Telecomuncazioni  frt
+	Fondamenti di Automatica		faut
+	Sistemi Operativi			so
+	Algoritmi e Strutture Dati		alg
 ";;
 	*) echo	-e "\e[31m\e[1mbad abbrv.\e[0m" >&2
 esac
 fi
-
-
 }
 
-mse() {
-	firefox https://math.stackexchange.com/
+site() {
+calc='http://wenders.dinfo.unifi.it/colombo_now/calc.html'
+unicrema='http://www.swappa.it/wiki/Category/UniCrema'
+cleancoder='https://blog.cleancoder.com/'
+goodreads='https://www.goodreads.com'
+lobster='https://lobste.rs'
+hackernews='https://news.ycombinator.com/news'
+lemmy='https://lemmy.ml'
+regex101='https://regex101.com'
+slashdot='https://slashdot.org/'
+github='https://github.com/Besnn/'
+tildes='https://tildes.net'
+
+if [ -z $1 ]; then
+	echo -e "\e[31m\e[1mcourse abbrv. not given\e[0m" >&2
+	else
+	case $1 in
+		"calc") firefox $calc;;
+		"unicrema") firefox $unicrema;;
+		"cleancoder"|"cleancode") firefox $cleancoder;;
+		"goodreads") firefox $goodreads;;
+		"lobster") firefox $lobster;;
+		"hackernews"|"ycb") firefox $hackernews;;
+		"lemmy") firefox $lemmy;;
+		"regex"|"regex101") firefox $regex101;;
+		'slashdot') firefox $slashdot;;
+		'github') firefox $github;;
+		'mse'|'mstack') firefox https://math.stackexchange.com/;;
+		'tildes') firefox $tildes;;
+		*) echo	-e "\e[31m\e[1mbad abbrv.\e[0m" >&2
+	esac
+fi
 }
+
 
 orario() {
 	xdg-open ~/academia/orario.png 
+}
+
+cmap() {
+	xdg-open ~/academia/diagram.png 
 }
 
 libri() {
@@ -103,7 +149,7 @@ if [ -z $1 ]; then
 	# ======= #
 	'algaut') zathura-start ~/academia/"algaut.pdf" &;;
 	'arccomp') zathura-start ~/academia/"arccomp.pdf" &;;
-	*) echo -e "\e[31m\e[1mbook abbrv. not given\e[0m" >&2;;
+	*) echo -e "\e[31m\e[1mbook abbrv. not given\e[0m" >&2
 esac
 fi
 }
@@ -117,41 +163,9 @@ matlab-gui() {
 	/usr/local/MATLAB/R2020b/bin/matlab &
 }
 
-
-
-site() {
-if [ -z $1 ]; then
-	echo -e "\e[31m\e[1msite abbrv. not given\e[0m" >&2
-	else
-	case $1 in
-	'calc') firefox http://wenders.dinfo.unifi.it/colombo_now/calc.html;;
-	'unicrema') firefox http://www.swappa.it/wiki/Category/UniCrema;;
-	'cleancode' | 'cleancoder') firefox https://blog.cleancoder.com/;;
-	'goodreads') firefox https://www.goodreads.com;;
-	*) echo -e "\e[31m\e[1msite abbrv. not given\e[0m" >&2;;
-esac
-fi
-}
-
-ycb() {
-	xdg-open https://news.ycombinator.com/news
-}
-
-idea() {
-	~/IDEA/bin/idea.sh &
-}
-
 bcl() {
 	cd ~/useful_jnk/assembly-bcl/
 	mvn exec:exec &
 	cd -
-}
-
-asm86() {
-	xdg-open ~/useful_jnk/davis/dist/index.html
-}
-
-regex101() {
-	xdg-open https:/regex101.com
 }
 
