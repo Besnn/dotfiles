@@ -136,25 +136,21 @@ ex ()
 # EXTRA #
 #########
 # Generic Options
-#xset r rate 195 42
-WINDIR='/mnt/c/Users/TDTTD'
+xset r rate 195 42
 set -o noclobber # safe i/o redirection; use >| to overwrite
 
 # So I can easily update the misc repo on my github
 #
-misc1="/home/besnn/.bashrc /home/besnn/.bash_extra /home/besnn/.vimrc /etc/hosts"
-WIN_DOTFILES=/mnt/c/Users/TDTTD/dotfiles
-misc2="${WIN_DOTFILES}/.conemurc ${WIN_DOTFILES}/clink.bat ${WIN_DOTFILES}/scripts ${WIN_DOTFILES}/Microsoft.PowerShell_profile.ps1"
+misc1='/home/besnn/.bashrc /home/besnn/.bash_extra /home/besnn/.vimrc /home/besnn/scripts /etc/hosts'
 for misce in $misc1
 do
+<<<<<<< HEAD
 /bin/cp -Lpurf $misce  "${WINDIR}"/_git/misc-dotfiles/win/wsl/ # -purf for preserve, update, recursive and force
+=======
+/bin/cp -Lpurf $misce  ~/_git/misc # -purf for preserve, update, recursive and force
+>>>>>>> d8fab28b9e67674d76f88c7ddd71301b2c68f6fc
 #/bin/cp because apparently cp is aliased as cp -i (as many other commands)
 # -L is for following symlinks
-done
-
-for misce in $misc2
-do
-/bin/cp -Lpurf $misce "${WINDIR}"/_git/misc-dotfiles/win/
 done
 
 # prompts
@@ -171,13 +167,16 @@ fi
 # defaults
 export EDITOR=vim
 # exports
-export PATH=/home/besnn/moco/:$PATH
+export PATH=/home/besnn/_git/moco-cli/:$PATH
 export PATH=/home/besnn/scripts/bin:$PATH
 export PATH=/home/besnn/Telegram:$PATH
+export PATH=/snap/bin/:$PATH
+export PATH=/home/besnn/.cargo/bin/:$PATH
+export PATH=/usr/lib/jvm/java-1.11.0-openjdk-amd64:$PATH
 export MANPATH=/usr/local/texlive/2020/texmf-dist/doc/man:$MANPATH
 export INFOPATH=/usr/local/texlive/2020/texmf-dist/doc/info:$INFOPATH
-export PATH=/usr/lib/jvm/java-1.11.0-openjdk-amd64:$PATH
 export VIMRC=~/.vimrc
+export BAT_THEME="Argonaut"
 # aliases
 alias gtime="cd ~/_git"
 alias ogtime="cd ~/_ogit"
@@ -200,6 +199,7 @@ alias v="vim"
 alias open="xdg-open"
 alias sy="synonym"
 alias tg="Telegram & >&2"
+alias yank="yank-cli"
 
 # sourcing .bash_extra
 exdir='/home/besnn/.bash_extra'
