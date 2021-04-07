@@ -137,7 +137,7 @@ ex ()
 #########
 # Generic Options
 #xset r rate 195 42
-WINDIR='/mnt/c/Users/TDTTD'
+WINDIR=/mnt/c/Users/TDTTD
 set -o noclobber # safe i/o redirection; use >| to overwrite
 
 # So I can easily update the misc repo on my github
@@ -170,6 +170,7 @@ fi
 
 # defaults
 export EDITOR=vim
+export WH=/mnt/c/Users/TDTTD
 # exports
 export PATH=/home/besnn/moco/:$PATH
 export PATH=/home/besnn/scripts/bin:$PATH
@@ -202,12 +203,12 @@ alias sy="synonym"
 alias tg="Telegram & >&2"
 
 # sourcing .bash_extra
-exdir='/home/besnn/.bash_extra'
+exdir=/home/besnn/.bash_extra
 
 [[ -f "$exdir" ]] && . "$exdir"
 
 # school stuff be here
-scdir='/home/besnn/.bash_schoolf'
+scdir=/home/besnn/.bash_schoolf
 
 # [[ -f "$scdir" ]] && . "$scdir"
 
@@ -215,4 +216,3 @@ scdir='/home/besnn/.bash_schoolf'
 reload() {
 	source $HOME/.bashrc
 }
-
