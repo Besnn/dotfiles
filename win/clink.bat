@@ -23,16 +23,16 @@
 :: * Git + Auxiliary Unix Binaries
 :: * vim
 :: * UnxUtils
-:: * powerline.bat
+:: * powerline.lua (clink installscripts <path>)
 
 
 @echo off
 ::doskey ls=dir $*
 ::doskey clear=cls
 ::doskey cd=chdir $*
-doskey refresh=C:\Users\TDTTD\scripts\powerline.bat\init.bat
-doskey ..=C:\Users\TDTTD\scripts\powerline.bat\_cd.bat ..
-doskey ...=C:\Users\TDTTD\scripts\powerline.bat\_cd.bat ..\..
+::doskey refresh=C:\Users\TDTTD\scripts\powerline.bat\init.bat
+::doskey ..=C:\Users\TDTTD\scripts\powerline.bat\_cd.bat ..
+::doskey ...=C:\Users\TDTTD\scripts\powerline.bat\_cd.bat ..\..
 
 :: Mimic cmd.exe's behaviour when starting from the start menu.
 if /i "%1"=="startmenu" (
