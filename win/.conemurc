@@ -1,2 +1,2 @@
 %windir%\system32\wsl.exe -cur_console:d:"c:\Users\TDTTD"
-cmd.exe /k "%ConEmuBaseDir%\CmdInit.cmd" C:\Users\TDTTD\scripts\powerline.bat\init.bat -cur_console:d:"c:\Users\TDTTD"
+cmd.exe /k "%ConEmuBaseDir%\CmdInit.cmd" -cur_console:d:"c:\Users\TDTTD"
