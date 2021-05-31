@@ -26,7 +26,6 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
 nnoremap <leader>' viw<esc>a'<esc>bi'<esc>lel
 " quality of life
-set directory=~/.vim/tmp
 inoremap jk <esc>
 nnoremap <leader><leader>/ :w<Enter> :o 
 nnoremap <leader><leader> :w<Enter>
@@ -55,15 +54,15 @@ autocmd filetype markdown set listchars=trail:¬
 nnoremap <leader>ba i.model small<CR><CR>.stack 256<CR>; Macros<CR><CR>.data<CR><CR>.code<CR><CR>start:<CR>mov ax, @code<CR>mov es, ax<CR>mov ax, @data<CR>mov ds, ax<CR><CR><CR>end start<Esc>2k
 " " " " " " " " " " " " " " " " " " " " " " " " " " " 
 " VIM PLUGINS
-"call plug#begin("~/.vim/plugged")
-"call plug#end()
-"
-"set rtp+=~/.vim/bundle/Vundle.vim
-"call vundle#begin()
-"Plugin 'suan/vim-instant-markdown', {'rtp': 'after'}
-"call vundle#end()
+call plug#begin("~/.vim/plugged")
+call plug#end()
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'suan/vim-instant-markdown', {'rtp': 'after'}
+call vundle#end()
 
 " PLUGIN OPTIONS & BINDINGS
-"let g:instant_markdown_autostart = 0
-"nmap <leader>m :InstantMarkdownPreview<cr>
-"nmap <leader>n :InstantMarkdownStop<cr>
+let g:instant_markdown_autostart = 0
+nmap <leader>m :InstantMarkdownPreview<cr>
+nmap <leader>n :InstantMarkdownStop<cr>
