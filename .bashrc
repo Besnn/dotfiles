@@ -75,7 +75,7 @@ if ${use_color} ; then
 		PS1='\[\033[01;32m\][\u@\h\[\033[01;37m\] \W\[\033[01;32m\]]\$\[\033[00m\] '
 	fi
 
-	alias ls='ls --color=auto'
+	#alias ls='ls --color=auto'
 	alias grep='grep --colour=auto'
 	alias egrep='egrep --colour=auto'
 	alias fgrep='fgrep --colour=auto'
@@ -163,12 +163,13 @@ fi
 # defaults
 export EDITOR=vim
 # exports
-export PATH=/home/besnn/_git/moco-cli/:$PATH
+export PATH=/home/besnn/moco-cli/:$PATH
 export PATH=/home/besnn/scripts/bin:$PATH
 export PATH=/home/besnn/Telegram:$PATH
 export PATH=/snap/bin/:$PATH
 export PATH=/home/besnn/.cargo/bin/:$PATH
 export PATH=/usr/lib/jvm/java-1.11.0-openjdk-amd64:$PATH
+export PATH=/home/besnn/.local/bin:$PATH
 export MANPATH=/usr/local/texlive/2020/texmf-dist/doc/man:$MANPATH
 export INFOPATH=/usr/local/texlive/2020/texmf-dist/doc/info:$INFOPATH
 export VIMRC=~/.vimrc
@@ -179,23 +180,31 @@ alias ogtime="cd ~/_ogit"
 alias mv="mv -i"
 alias ..="cd .."
 alias ...="cd ../.."
-alias syu="sudo pacman -Syyu"
+alias syu="sudo pacman -Syyu"             # relic
 alias cp="cp -i"                          # confirm before overwriting something
 alias df="df -h"                          # human-readable sizes
 alias free="free -m"                      # show sizes in MB
-alias np="nano -w PKGBUILD"
-alias ld="ls -Fl | grep \/$"
+alias np="nano -w PKGBUILD"               # relic
+alias dir="lsd -Fl | grep \/$"
 alias more="less"
-alias ll="ls -lah"
-alias la="ls -A"
+alias l="\ls --color=auto"
+alias ls="lsd"
+alias ll="lsd -lah"
+alias la="lsd -A"
+alias lg="\ls | grep"
 alias lisp="clisp"
 alias uptime="uptime -p"
 alias bc="bc -l"
 alias v="vim"
+alias g="git"
+alias gs="git status -s"
 alias open="xdg-open"
 alias sy="synonym"
 alias tg="Telegram & >&2"
 alias yank="yank-cli"
+alias fd="fdfind"
+alias find="fdfind"
+alias bpython="python3 -m bpython"
 
 # sourcing .bash_extra
 exdir='/home/besnn/.bash_extra'
@@ -212,3 +221,5 @@ reload() {
 	source $HOME/.bashrc
 }
 
+
+source /home/besnn/.config/broot/launcher/bash/br

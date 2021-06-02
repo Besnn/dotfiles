@@ -9,15 +9,16 @@
 #  command2
 # }
 #
+nul="/dev/null"
 
 webmail() {
 	echo 'Webmail Studenti su Firefox'
-	firefox https://www.siaf.unifi.it/vp-1383-webmail.html
+	xdg-open https://www.siaf.unifi.it/vp-1383-webmail.html
 }
 
 sgro() {
 	echo 'Segreteria Online su Firefox'
-	firefox https://sol-portal.unifi.it/ls-3-studenti.html#Studenti_Iscritti
+	xdg-open https://sol-portal.unifi.it/ls-3-studenti.html#Studenti_Iscritti
 }
 
 moodle() {
@@ -44,23 +45,23 @@ if [ -z $1 ]; then
 	echo -e "\e[31m\e[1mcourse abbrv. not given\e[0m" >&2
 	else
 	case $1 in
-	'am1') firefox $analisi_mat;;
-	'alg') firefox $algebra;;
-	'cnm') firefox $analisi_num;;
-	'fin') firefox $fond_info;;
-	'prg') firefox $prog;;
-	'ph1'|'f1') firefox $fisica1;;
-	'tdc') firefox $teoria_circ;;
-	'lpg'|'lprg'|'lprog') firefox $lab_prog;;
-	'fro') firefox $fond_ric_op;;
-	'am2'|'prob') firefox $analisi_prob;; 
-	'calc') firefox $calcolatori;;
-	'fst') firefox $fond_sign_trans;;
-	'prgc') firefox $prog_concorr;;
-	'frt') firefox $fond_ret;;
-	'faut') firefox $fond_aut;;
-	'so') firefox $sys_op;;
-	'ast'|'asd') firefox $algoritmi;;
+	'am1') xdg-open $analisi_mat;;
+	'alg') xdg-open $algebra;;
+	'cnm') xdg-open $analisi_num;;
+	'fin') xdg-open $fond_info;;
+	'prg') xdg-open $prog;;
+	'ph1'|'f1') xdg-open $fisica1;;
+	'tdc') xdg-open $teoria_circ;;
+	'lpg'|'lprg'|'lprog') xdg-open $lab_prog;;
+	'fro') xdg-open $fond_ric_op;;
+	'am2'|'prob') xdg-open $analisi_prob;; 
+	'calc') xdg-open $calcolatori;;
+	'fst') xdg-open $fond_sign_trans;;
+	'prgc') xdg-open $prog_concorr;;
+	'frt') xdg-open $fond_ret;;
+	'faut') xdg-open $fond_aut;;
+	'so') xdg-open $sys_op;;
+	'ast'|'asd') xdg-open $algoritmi;;
 	'help'|'-h'|'--help') # DONT MESS W/ THE FORMATTING
 echo -e "\tCourse					Abbrv.
 	Analisi Matematica			am1
@@ -103,18 +104,18 @@ if [ -z $1 ]; then
 	echo -e "\e[31m\e[1mcourse abbrv. not given\e[0m" >&2
 	else
 	case $1 in
-		"calc") firefox $calc;;
-		"unicrema") firefox $unicrema;;
-		"cleancoder"|"cleancode") firefox $cleancoder;;
-		"goodreads") firefox $goodreads;;
-		"lobster") firefox $lobster;;
-		"hackernews"|"ycb") firefox $hackernews;;
-		"lemmy") firefox $lemmy;;
-		"regex"|"regex101") firefox $regex101;;
-		'slashdot') firefox $slashdot;;
-		'github') firefox $github;;
-		'mse'|'mstack') firefox https://math.stackexchange.com/;;
-		'tildes') firefox $tildes;;
+		"calc") xdg-open $calc;;
+		"unicrema") xdg-open $unicrema;;
+		"cleancoder"|"cleancode") xdg-open $cleancoder;;
+		"goodreads") xdg-open $goodreads;;
+		"lobster") xdg-open $lobster;;
+		"hackernews"|"ycb") xdg-open $hackernews;;
+		"lemmy") xdg-open $lemmy;;
+		"regex"|"regex101") xdg-open $regex101;;
+		'slashdot') xdg-open $slashdot;;
+		'github') xdg-open $github;;
+		'mse'|'mstack') xdg-open https://math.stackexchange.com/;;
+		'tildes') xdg-open $tildes;;
 		*) echo	-e "\e[31m\e[1mbad abbrv.\e[0m" >&2
 	esac
 fi
