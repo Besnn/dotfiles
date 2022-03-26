@@ -1,0 +1,6 @@
+[user]
+	name = Besnn
+	email = besniknuro74@gmail.com
+[credential]
+	helper = store --file=$HOME/.git-credentials
+

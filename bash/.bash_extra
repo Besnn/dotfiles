@@ -1,0 +1,178 @@
+#
+# ~/.bash_extra
+#
+# Personal configs be here (mostly)
+
+# Function definition syntax for the record:
+# func_name() {
+#  command1
+#  command2
+# }
+#
+
+
+webmail() {
+	echo 'Webmail Studenti su Firefox'
+	open https://www.siaf.unifi.it/vp-1383-webmail.html
+}
+
+sgro() {
+	echo 'Segreteria Online su Firefox'
+	open https://sol-portal.unifi.it/ls-3-studenti.html#Studenti_Iscritti
+}
+
+moodle() {
+# Course Abbreviations
+analisi_matematica='https://e-l.unifi.it/course/view.php?id=13330' # am1
+algebra_lineare='https://e-l.unifi.it/course/view.php?id=10420' # alg
+analisi_numerica='https://e-l.unifi.it/course/view.php?id=12171' # cnm
+fondamenti_informatica='https://e-l.unifi.it/course/view.php?id=11232' # fin
+programmazione='https://e-l.unifi.it/course/view.php?id=10575' # prg
+fisica1='https://e-l.unifi.it/course/view.php?id=11502' # ph1 or f1
+teoria_circuiti='https://e-l.unifi.it/course/view.php?id=20398' # tdc
+laboratorio_programmazione='https://e-l.unifi.it/course/view.php?id=14899' # lpg or lprg
+fondamenti_ricerca_operativa='https://e-l.unifi.it/course/view.php?id=14647' # fro
+analisi_probabilita='https://e-l.unifi.it/course/view.php?id=14587' # am2 or prob
+calcolatori='https://e-l.unifi.it/course/view.php?id=18420' # calc
+fondamenti_segnale_transmissione='https://e-l.unifi.it/course/view.php?id=15015' # fst
+programmazione_concorrente='https://e-l.unifi.it/course/view.php?id=17752' # prgc
+fondamenti_reti_telecomunicazione='https://e-l.unifi.it/course/view.php?id=19844' # frt
+fondamenti_automatica='https://e-l.unifi.it/course/view.php?id=20446' # faut
+sistemi_operativi='https://e-l.unifi.it/course/view.php?id=20899' # so
+algoritmi_strutture_dati='https://e-l.unifi.it/course/view.php?id=21644' # alg
+ingegneria_software="https://e-l.unifi.it/course/view.php?id=25168" # se or is
+base_dati="https://e-l.unifi.it/course/view.php?id=21525" # db or bd 
+elettronica_digitale="https://e-l.unifi.it/course/view.php?id=20609" # ed
+intelligenza_artificiale="https://e-l.unifi.it/enrol/index.php?id=23941" #ai
+informatica_industriale="https://e-l.unifi.it/course/view.php?id=16590" # ii
+informatica_teorica="https://e-l.unifi.it/course/view.php?id=20964" # it
+metodi_matematici="https://e-l.unifi.it/course/view.php?id=14589" # m
+codici="https://e-l.unifi.it/course/view.php?id=14637" # cod
+sistemi_distribuiti="https://e-l.unifi.it/course/view.php?id=24629" # sd
+progettazione_produzione_multimediale="https://e-l.unifi.it/course/view.php?id=22733" # ppm or pm 
+laboratorio_informatica="https://e-l.unifi.it/course/view.php?id=20894" # li
+
+if [ -z $1 ]; then
+	echo -e "\e[31m\e[1mcourse abbrv. not given\e[0m" >&2
+	else
+	case $1 in
+	'am1') open $analisi_matematica;;
+	'alg') open $algebra_lineare;;
+	'cnm') open $analisi_numerica;;
+	'fin') open $fondamenti_informatica;;
+	'prg') open $programmazione;;
+	'ph1'|'f1') open $fisica1;;
+	'tdc') open $teoria_circuiti;;
+	'lpg'|'lprg'|'lprog') open $laboratorio_programmazione;;
+	'fro') open $fondamenti_ricerca_operativa;;
+	'am2'|'prob') open $analisi_probabilita;; 
+	'calc') open $calcolatori;;
+	'fst') open $fondamenti_segnale_transmissione;;
+	'prgc') open $programmazione_concorrente;;
+	'frt') open $fondamenti_reti_telecomunicazioni;;
+	'faut') open $fondamenti_automatica;;
+	'so') open $sistemi_operativi;;
+	'ast'|'asd') open $algoritmi_strutture_dati;;
+	'ai') open $intelligenza_artificiale;;
+  'se'|'swe'|'is') open $ingegneria_software;;
+  'db'|'bd') open $base_dati;;
+  'ed') open $elettronica_digitale;;
+  'ii') open $informatica_industriale;;
+  'it') open $informatica_teorica;;
+  'm'|'mm') open $metodi_matematici;;
+  'cod') open $codici;;
+  'sd') open $sistemi_distribuiti;;
+  'ppm'|'pm') open $progettazione_produzione_multimediale;;
+  'li') open $laboratorio_informatica;;
+	'help'|'-h'|'--help') # DONT MESS W/ THE FORMATTING
+echo -e "\tCourse					Abbrv.
+	Analisi Matematica			am1
+	Algebra Lineare & Geometria		alg
+	Fisica 1				ph1 or f1
+	Fondamenti di Informatica		fin
+	Calcolo Numerico			cnm
+	Programmazione				prg
+	Laboratorio di Programmazione		lpg or lprg
+	Teoria dei Circuiti			tdc	
+	Fondamenti di Segnale e Trasmissione	fst
+	Calcolatori				calc
+	Analisi Matematica 2 & Probabilità	am2 or prob
+	Fondamenti di Ricerca Operativa		fro
+	Programmazione Concorrente		prgc
+	Fondamenti di Reti di Telecomuncazioni  frt
+	Fondamenti di Automatica		faut
+	Sistemi Operativi			so
+	Algoritmi e Strutture Dati		ast or asd
+";;
+	*) echo	-e "\e[31m\e[1mbad abbrv.\e[0m" >&2
+esac
+fi
+}
+
+site() {
+calc='http://wenders.dinfo.unifi.it/colombo_now/calc.html'
+unicrema='http://www.swappa.it/wiki/Category/UniCrema'
+cleancoder='https://blog.cleancoder.com/'
+goodreads='https://www.goodreads.com'
+lobster='https://lobste.rs'
+hackernews='https://news.ycombinator.com/news'
+lemmy='https://lemmy.ml'
+regex101='https://regex101.com'
+slashdot='https://slashdot.org/'
+github='https://github.com/Besnn/'
+tildes='https://tildes.net'
+
+if [ -z $1 ]; then
+	echo -e "\e[31m\e[1mcourse abbrv. not given\e[0m" >&2
+	else
+	case $1 in
+		"calc") open $calc;;
+		"unicrema") open $unicrema;;
+		"cleancoder"|"cleancode") open $cleancoder;;
+		"goodreads") open $goodreads;;
+		"lobster") open $lobster;;
+		"hackernews"|"ycb") open $hackernews;;
+		"lemmy") open $lemmy;;
+		"regex"|"regex101") open $regex101;;
+		'slashdot') open $slashdot;;
+		'github') open $github;;
+		'mse'|'mstack') open https://math.stackexchange.com/;;
+		'tildes') open $tildes;;
+		*) echo	-e "\e[31m\e[1mbad abbrv.\e[0m" >&2
+	esac
+fi
+}
+
+
+orario() {
+	xdg-open ~/academia/orario.png 
+}
+
+cmap() {
+	xdg-open ~/academia/diagram.png 
+}
+
+libri() {
+
+if [ -z $1 ]; then
+	echo -e "\e[31m\e[1mbook abbrv. not given\e[0m" >&2
+	else
+	case $1 in
+	'off') zathura-start ~/academia/offerta.pdf &;;
+	'fst') zathura-start ~/academia/fst.pdf &;;
+	'fst-ind') zathura-start ~/academia/fst-ind.pdf &;;
+	'fsto') open http://www.dspguide.com/pdfbook.htm &;;
+	'fstd') zathura-start ~/academia/fstd.pdf &;;
+	'calc') zathura-start ~/academia/calc.pdf &;;
+	'calc-reg') zathura-start ~/academia/calc-reg.pdf &;;
+	'rip') zathura-start ~/academia/rip/index.html &;;
+	'am2') zathura-start ~/academia/am2.pdf &;;
+	'prob') zathura-start ~/academia/prob.pdf &;;
+	'java') zathura-start ~/academia/java.pdf &;;
+	# ======= #
+	'algaut') zathura-start ~/academia/"algaut.pdf" &;;
+	'arccomp') zathura-start ~/academia/"arccomp.pdf" &;;
+	*) echo -e "\e[31m\e[1mbook abbrv. not given\e[0m" >&2
+esac
+fi
+}
