@@ -1,5 +1,0 @@
-$if clink
-
-M-r: "\C-x\C-r"
-
-$endif
