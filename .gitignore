@@ -1,5 +1,0 @@
-# ignore all backups
-*~
-win/*~
-wsl/*~
-wsl/*.swp
